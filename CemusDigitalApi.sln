@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CemusDigitalApi", "CemusDigitalApi\CemusDigitalApi.csproj", "{613C0B25-B469-4F79-A211-E50946A8632D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{514425F3-8B6A-4E22-A92A-A2D3FF7EC58F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{613C0B25-B469-4F79-A211-E50946A8632D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613C0B25-B469-4F79-A211-E50946A8632D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613C0B25-B469-4F79-A211-E50946A8632D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613C0B25-B469-4F79-A211-E50946A8632D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{514425F3-8B6A-4E22-A92A-A2D3FF7EC58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514425F3-8B6A-4E22-A92A-A2D3FF7EC58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514425F3-8B6A-4E22-A92A-A2D3FF7EC58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514425F3-8B6A-4E22-A92A-A2D3FF7EC58F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A50A1E41-6349-4165-BBE7-9A83607E785A}
+	EndGlobalSection
+EndGlobal
