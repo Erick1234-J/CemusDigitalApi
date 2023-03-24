@@ -11,5 +11,7 @@ namespace CemusDigitalApi.Services.Contracts
         Task<Batch> UpdateBatch(int id, Batch batch);
 
         Task<Batch> DeleteBatch(int id);
+
+        Task<Batch> AssignBatchToDepartment(int id, Batch batch);
     }
 }

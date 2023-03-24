@@ -67,6 +67,18 @@ namespace CemusDigitalApi.Controllers
             }
             return Ok(result);
         }
+        [HttpPut]
+        [Route("AssignBatchToDepartment/{id}")]
+        public async Task<ActionResult<Batch>> AssignBatchToDepartment(int id, Batch batch)
+        {
+            var result = await _batch.AssignBatchToDepartment(id, batch);
+
+            if (result == null)
+            {
+                return BadRequest();
+            }
+            return Ok(result);
+        }
 
         [HttpDelete]
         [Route("DeleteBatch/{id}")]

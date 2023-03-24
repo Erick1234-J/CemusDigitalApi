@@ -27,6 +27,9 @@ namespace Shared.Models
         public string? RouteFlag { get; set; }
         public DateTime? CreatedAt { get; set; } = DateTime.Now;
 
+        public int? DepartmentId { get; set; }
         public virtual ICollection<DocVersion>? Versions { get; set; }
+
+        public virtual Department? Department { get; set; }
     }
 }

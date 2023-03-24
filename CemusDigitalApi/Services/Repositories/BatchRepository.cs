@@ -13,6 +13,27 @@ namespace CemusDigitalApi.Services.Repositories
         {
             _db = db;
         }
+
+        public async Task<Batch> AssignBatchToDepartment(int id, Batch batch)
+        {
+            try
+            {
+                var batc = await _db.Batchs.FindAsync(id);
+
+                if (batc != null)
+                {
+                    batc.DepartmentId = batc.DepartmentId;
+                    _db.Batchs.Update(batc);
+                    await _db.SaveChangesAsync();
+                }
+                return batch;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<Batch> DeleteBatch(int id)
         {
           try
@@ -49,7 +70,7 @@ namespace CemusDigitalApi.Services.Repositories
         {
             try
             {
-                var batch = await _db.Batchs.FindAsync(id);
+                var batch = await _db.Batchs.Where(c => c.Id == id).Include(v => v.Department).Where(v => v.DepartmentId == 0 || v.DepartmentId != 0).FirstOrDefaultAsync();
                 return batch!;
             }
             catch (Exception)
@@ -62,7 +83,7 @@ namespace CemusDigitalApi.Services.Repositories
         {
             try
             {
-                var batches = await _db.Batchs.Where(c => c.Status != "ACHIEVED").ToListAsync();
+                var batches = await _db.Batchs.Where(c => c.Status != "ACHIEVED").Include(v => v.Department).Where(v => v.DepartmentId == 0 || v.DepartmentId != 0).ToListAsync();
                 return batches!;
             }catch(Exception)
             {
