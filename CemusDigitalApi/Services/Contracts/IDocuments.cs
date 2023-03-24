@@ -15,5 +15,9 @@ namespace CemusDigitalApi.Services.Contracts
         Task<Documents> AssignDocumentToEmployee(int id, Documents documents);
 
         Task<Documents> AssignDocumentToVersion(int id, Documents documents);
+
+        Task<Documents> SearchDocument(string searchItem);
+
+
     }
 }
