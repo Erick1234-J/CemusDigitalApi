@@ -47,8 +47,9 @@ namespace CemusDigitalApi.Services.Repositories
                     {
                         document.EmployeeId = null;
                         _db.Documents.Update(document);
-                        await _db.SaveChangesAsync();
+                        
                     }
+                    await _db.SaveChangesAsync();
                 }
 
                 if(employee!= null)

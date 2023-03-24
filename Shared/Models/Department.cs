@@ -12,6 +12,7 @@ namespace Shared.Models
         public Department()
         {
                 Employees = new HashSet<Employee>();
+                Batches = new HashSet<Batch>();
         }
         public int Id { get; set; }
 
@@ -24,5 +25,7 @@ namespace Shared.Models
 
         public string? RouteFlag { get; set; } = string.Empty;
         public ICollection<Employee>? Employees { get; set;} 
+
+        public ICollection<Batch>? Batches { get; set;}
     }
 }
