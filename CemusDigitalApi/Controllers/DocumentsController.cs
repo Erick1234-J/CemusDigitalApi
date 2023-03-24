@@ -57,6 +57,20 @@ namespace CemusDigitalApi.Controllers
             return Ok(result);
         }
 
+        [HttpGet]
+        [Route("SearchDocument")]
+
+        public async Task<ActionResult<Documents>> SearchDocument(string searchItem)
+        {
+            var result = await _documents.SearchDocument(searchItem);
+
+            if (result == null)
+            {
+                return BadRequest();
+            }
+            return Ok(result);
+        }
+
         [HttpPut]
         [Route("UpdateDocument/{id}")]
         public async Task<ActionResult<Documents>> UpdateDocuments(int id, Documents documents)

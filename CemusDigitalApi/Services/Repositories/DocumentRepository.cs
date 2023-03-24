@@ -126,6 +126,22 @@ namespace CemusDigitalApi.Services.Repositories
             }
         }
 
+        public async Task<Documents> SearchDocument(string searchItem)
+        {
+            try
+            {
+                var searched = await _db.Documents.Where(c => c.Name.Contains(searchItem) || c.Type.Contains(searchItem))
+                    .Include(v => v.Version).Where(v => v.VersionId == 0 || v.VersionId != 0)
+                    .Include(d => d.Employee).Where(d => d.EmployeeId == 0 || d.EmployeeId != 0).FirstOrDefaultAsync();
+
+                return searched!;
+                
+            }catch(Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<Documents> UpdateDocument(int id, Documents documents)
         {
             try

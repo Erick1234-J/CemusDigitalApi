@@ -42,7 +42,7 @@ namespace CemusDigitalApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetDepartments")]
+        [Route("GetEmployees")]
 
         public async Task<ActionResult<Employee>> GetEmployees()
         {
